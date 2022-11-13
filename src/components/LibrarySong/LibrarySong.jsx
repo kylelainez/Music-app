@@ -1,8 +1,14 @@
 import React from 'react';
 
-const LibrarySong = ({ songs, song, setCurrentSong, id }) => {
+const LibrarySong = ({ songs, song, setCurrentSong, audioRef, isPlaying }) => {
 	const songSelectHandler = () => {
 		setCurrentSong(song);
+		if (isPlaying) {
+			const playPromise = audioRef.current.play();
+			if (playPromise !== undefined) {
+				playPromise.then(audio => audioRef.current.play());
+			}
+		}
 	};
 
 	return (
