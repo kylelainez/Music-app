@@ -2,6 +2,7 @@ import './App.scss';
 //Adding Components
 import Player from '../Player/Player';
 import Song from '../Song/Song';
+import Library from '../Library/Library';
 //Import Util
 import data from '../../util';
 import { useState } from 'react';
@@ -19,6 +20,7 @@ function App() {
 				isPlaying={isPlaying}
 				setIsPlaying={setIsPlaying}
 			/>
+			<Library songs={songs} />
 		</div>
 	);
 }
